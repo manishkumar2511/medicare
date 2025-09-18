@@ -14,7 +14,7 @@ import { FooterComponent } from '../../../shared/footer/footer.component';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, FormsModule, RouterModule, ButtonModule, CardModule, MenubarModule, ToggleButtonModule, SharedModule, FooterComponent],
+  imports: [CommonModule, FormsModule, RouterModule, ButtonModule, CardModule, MenubarModule, ToggleButtonModule, SharedModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
