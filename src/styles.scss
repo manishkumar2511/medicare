@@ -29,6 +29,12 @@
   --shadow-light: 0 2px 10px rgba(0, 0, 0, 0.1);
   --shadow-medium: 0 5px 15px rgba(0, 0, 0, 0.08);
   --shadow-heavy: 0 20px 40px rgba(0, 0, 0, 0.1);
+  
+  // Navbar/Footer Colors
+  --footer-bg: #222;
+  --footer-text: #fff;
+  --navbar-bg: var(--primary-color);
+  --navbar-text: #fff;
 }
 
 /* Dark Theme Variables */
@@ -138,6 +144,35 @@ html {
 
 .border-primary {
   border-color: var(--border-color);
+}
+
+/* Common Navbar and Footer Responsive Styles */
+.navbar {
+  background-color: var(--navbar-bg);
+  color: var(--navbar-text);
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.footer {
+  background-color: var(--footer-bg);
+  color: var(--footer-text);
+  width: 100%;
+  padding: 2rem 0 0 0;
+}
+@media (max-width: 900px) {
+  .navbar .nav-container,
+  .footer .footer-content {
+    flex-direction: column !important;
+    gap: 1rem !important;
+    align-items: flex-start !important;
+  }
+  .footer .footer-bottom-content {
+    flex-direction: column !important;
+    gap: 0.5rem !important;
+    align-items: flex-start !important;
+  }
 }
 
 /* Dark theme specific styles */
