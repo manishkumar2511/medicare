@@ -61,8 +61,32 @@
   }
   @media (max-width: 900px) {
     .nav-container {
-      flex-direction: column;
-      align-items: flex-start;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding: 0.5rem 1rem;
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      margin: 0;
+    }
+    .nav-header-row {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+    }
+    .hamburger {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+      height: auto;
     }
     .nav-menu {
       flex-direction: column;
@@ -71,9 +95,6 @@
       &.active {
         display: flex;
       }
-    }
-    .hamburger {
-      display: flex;
     }
   }
 }

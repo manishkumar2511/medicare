@@ -1,3 +1,11 @@
+:root {
+  --app-bg: #FAFAFA;
+}
+
+[data-theme="dark"] {
+  --app-bg: #23272A;
+  background-color: #23272A !important;
+}
 /* Import Poppins font from Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 

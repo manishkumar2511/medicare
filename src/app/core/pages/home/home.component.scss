@@ -1,3 +1,70 @@
+@media (max-width: 600px) {
+  .pricing-section .pricing-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .pricing-card {
+    margin: 0 auto 24px auto !important;
+    width: 100% !important;
+    max-width: 350px !important;
+    box-sizing: border-box;
+  }
+  .plan-header {
+    text-align: center !important;
+    align-items: center !important;
+    justify-content: center !important;
+    display: flex;
+    flex-direction: column;
+  }
+  .plan-header .plan-name,
+  .plan-header .plan-price,
+  .plan-header .plan-description {
+    text-align: center !important;
+    width: 100%;
+  }
+  .feature-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .feature-icon {
+    margin-right: 8px;
+  }
+}
+.navbar-bg-btn {
+  background: var(--navbar-bg, #2E7D5F) !important;
+  color: var(--navbar-text, #fff) !important;
+  border: none !important;
+  border-radius: 8px !important;
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  box-shadow: 0 2px 8px rgba(46, 125, 95, 0.08) !important;
+  transition: background 0.2s;
+}
+.secondary-btn {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.demo-btn {
+  border: 2px solid var(--app-bg, #23272A) !important;
+  box-shadow: none !important;
+}
+.demo-btn {
+  background: transparent !important;
+  color: var(--primary-color, #2E7D5F) !important;
+  border: none !important;
+  box-shadow: none !important;
+  transition: background 0.2s;
+}
+
+.demo-btn:hover {
+  background: var(--primary-color, #2E7D5F) !important;
+  color: var(--text-white, #fff) !important;
+}
 // MedicalCare Theme Variables
 $primary-color: #2E7D5F;
 $primary-hover: #25694E;
@@ -128,29 +195,24 @@ $border-color: #E0E0E0;
   border-color: var(--primary-color) !important;
 }
 
-.cta-btn {
-  background: var(--primary-color) !important;
-  border-color: var(--primary-color) !important;
 
-  &:hover {
-    background: var(--primary-hover) !important;
-    border-color: var(--primary-hover) !important;
-  }
+.primary-btn, .cta-btn, .secondary-btn, .plan-button {
+  background: var(--primary-color, #2E7D5F) !important;
 }
 
-.hamburger {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-
-  .bar {
-    width: 25px;
-    height: 3px;
-    background: var(--text-primary);
-    margin: 3px 0;
-    transition: 0.3s;
-  }
+.plan-button {
+  background: var(--navbar-bg, #2E7D5F) !important;
+  color: var(--text-white) !important;
+  border: none !important;
+  border-radius: 0 !important;
+  font-weight: 600 !important;
+  box-shadow: var(--shadow-light) !important;
+  transition: all 0.3s ease !important;
 }
+.primary-btn:hover, .cta-btn:hover, .secondary-btn:hover, .plan-button:hover {
+  background: var(--primary-hover) !important;
+}
+
 
 // Hero Section
 .hero-section {
@@ -356,7 +418,7 @@ $border-color: #E0E0E0;
 .pricing-card {
   position: relative;
   transition: all 0.3s ease;
-  border: 2px solid var(--border-color) !important;
+  border: none !important;
 
   &:hover {
     transform: translateY(-10px);
@@ -672,6 +734,13 @@ $border-color: #E0E0E0;
 }
 
 @media (max-width: 480px) {
+  .pricing-card,
+  .client-card {
+    margin: 0 auto 20px auto;
+    max-width: 95vw;
+    width: 100%;
+    box-sizing: border-box;
+  }
   .hero-title {
     font-size: 2rem;
   }

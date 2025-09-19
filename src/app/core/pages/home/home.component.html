@@ -6,8 +6,8 @@
       <h1 class="hero-title">{{ bannerQuote }}</h1>
       <p class="hero-subtitle">{{ bannerSubtext }}</p>
       <div class="hero-buttons">
-        <p-button label="Start Free Trial" size="large" class="primary-btn"></p-button>
-        <p-button label="Watch Demo" [outlined]="true" size="large" class="secondary-btn"></p-button>
+  <p-button label="Start Free Trial" [outlined]="true" size="large" class="secondary-btn"></p-button>
+  <p-button label="Watch Demo" [outlined]="true" size="large" class="demo-btn"></p-button>
       </div>
     </div>
     <div class="hero-image">
@@ -78,11 +78,10 @@
         <ng-template pTemplate="footer">
           <p-button 
             [label]="plan.popular ? 'Get Started' : 'Choose Plan'" 
-            [class]="plan.popular ? 'primary-btn' : 'secondary-btn'"
-            [outlined]="!plan.popular"
-            [style]="{'width': '100%'}"
-            class="plan-button">
+            class="navbar-bg-btn plan-button"
+            [style]="{'width': '100%'}">
           </p-button>
+
         </ng-template>
       </p-card>
     </div>
