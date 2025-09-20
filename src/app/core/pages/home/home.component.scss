@@ -33,6 +33,83 @@
   .feature-icon {
     margin-right: 8px;
   }
+  .hero-section {
+    padding: 60px 0 40px;
+    min-height: unset;
+  }
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    text-align: center;
+    padding: 0 10px;
+  }
+  .hero-title {
+    font-size: 2rem !important;
+    word-break: break-word;
+  }
+  .hero-subtitle {
+    font-size: 1rem !important;
+    margin-bottom: 20px !important;
+  }
+  .hero-buttons {
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+  }
+  .hero-buttons .p-button {
+    width: 100%;
+    max-width: 300px;
+  }
+  .banner-image-container {
+    max-width: 95vw;
+  }
+  .banner-image {
+    height: 220px !important;
+  }
+  .banner-overlay {
+    padding: 16px 8px 8px !important;
+  }
+  .banner-content h3 {
+    font-size: 1.2rem !important;
+  }
+  .banner-content p {
+    font-size: 0.95rem !important;
+  }
+  .banner-stats {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .stat-item h3 {
+    font-size: 1.2rem !important;
+  }
+  .stat-item p {
+    font-size: 0.8rem !important;
+  }
+  .pricing-section {
+    padding: 40px 0 !important;
+  }
+  .pricing-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+  .clients-section {
+    padding: 40px 0 !important;
+  }
+  .clients-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+  .client-card {
+    padding: 16px 8px !important;
+    font-size: 0.95rem !important;
+  }
+  .client-logo {
+    font-size: 2rem !important;
+    margin-bottom: 8px !important;
+  }
+  .client-name {
+    font-size: 1rem !important;
+  }
 }
 .navbar-bg-btn {
   background: var(--navbar-bg, #2E7D5F) !important;
