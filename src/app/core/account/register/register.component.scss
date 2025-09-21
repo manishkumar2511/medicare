@@ -1,0 +1,118 @@
+.register-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--background-light, #FAFAFA) 0%, #E8F5E8 100%);
+  padding: 2vw 0;
+}
+.register-form {
+  width: 100%;
+  max-width: 600px;
+  background: var(--background-primary, #fff);
+  box-shadow: 0 4px 24px rgba(46, 125, 95, 0.12);
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.register-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary-color, #2E7D5F);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+.register-section {
+  background: none;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+.form-group {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+.form-group label {
+  font-weight: 500;
+  margin-bottom: 0.3rem;
+  color: var(--primary-color, #2E7D5F);
+}
+.form-control {
+  padding: 0.7rem 1rem;
+  border: 1px solid var(--border-color, #E0E0E0);
+  border-radius: 8px;
+  font-size: 1rem;
+  background: var(--background-light, #FAFAFA);
+  color: var(--text-primary, #212121);
+}
+.register-btn {
+  width: 100%;
+  padding: 1rem 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  background: var(--primary-color, #2E7D5F);
+  color: var(--text-white, #fff);
+  border: none;
+  transition: background 0.2s;
+  margin-top: 1.5rem;
+}
+.register-btn:hover {
+  background: var(--primary-hover, #25694E);
+}
+@media (max-width: 900px) {
+  .register-form {
+    max-width: 98vw;
+    padding: 1rem 0.5rem;
+    border-radius: 10px;
+  }
+  .register-title {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+}
+@media (max-width: 600px) {
+  .register-wrapper {
+    padding: 1vw 0;
+  }
+  .register-form {
+    max-width: 99vw;
+    padding: 0.5rem 0.2rem;
+    border-radius: 8px;
+    gap: 1rem;
+  }
+  .register-title {
+    font-size: 1.1rem;
+    margin-bottom: 0.7rem;
+  }
+  .form-control {
+    font-size: 0.95rem;
+    padding: 0.5rem 0.7rem;
+  }
+  .register-btn {
+    font-size: 1rem;
+    padding: 0.7rem 0;
+  }
+}
+@media (min-width: 1600px) {
+  .register-form {
+    max-width: 800px;
+    padding: 3rem 2rem;
+    border-radius: 20px;
+  }
+  .register-title {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+  .form-control {
+    font-size: 1.2rem;
+    padding: 1rem 1.5rem;
+  }
+  .register-btn {
+    font-size: 1.2rem;
+    padding: 1.2rem 0;
+  }
+}

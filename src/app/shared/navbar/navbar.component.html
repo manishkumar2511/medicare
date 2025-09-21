@@ -12,14 +12,14 @@
       </div>
     </div>
     <div class="nav-menu" [class.active]="mobileMenuOpen">
-  <a routerLink="/home" class="nav-link">Home</a>
-  <a routerLink="/features" class="nav-link">Features</a>
-  <a routerLink="/pricing" class="nav-link">Pricing</a>
-  <a routerLink="/about" class="nav-link">About</a>
-  <a routerLink="/contact" class="nav-link">Contact</a>
+      <a routerLink="/home" class="nav-link">Home</a>
+      <a routerLink="/features" class="nav-link">Features</a>
+      <a routerLink="/pricing" class="nav-link">Pricing</a>
+      <a routerLink="/about" class="nav-link">About</a>
+      <a routerLink="/contact" class="nav-link">Contact</a>
       <div class="nav-buttons">
-<a class="nav-link" (click)="navigateToLogin()">Login</a>
-        <a class="nav-link" href="#get-started">Get Started</a>
+        <a class="nav-link" (click)="navigateToLogin()">Login</a>
+        <a class="nav-link" (click)="navigateToRegister()">Get Started</a>
         <i class="pi" [ngClass]="isDarkMode ? 'pi-moon' : 'pi-sun'" (click)="toggleTheme()"
           style="font-size: 1.5rem; cursor: pointer; margin-left: 1rem; color: var(--text-primary);"></i>
       </div>
