@@ -1,10 +1,23 @@
 @media (min-width: 2000px) {
   .register-columns {
-    flex-direction: column;
-    gap: 1.5rem;
+    flex-direction: row;
+    gap: 2.5rem;
   }
   .register-form {
-    max-width: 700px;
+    max-width: 1200px;
+    padding: 3rem 2.5rem;
+  }
+  .register-title {
+    font-size: 3rem;
+    margin-bottom: 2.5rem;
+  }
+  .form-control {
+    font-size: 1.3rem;
+    padding: 1.2rem 2rem;
+  }
+  .register-btn {
+    font-size: 1.3rem;
+    padding: 1.5rem 0;
   }
 }
 .register-wrapper {
