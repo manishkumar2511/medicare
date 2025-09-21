@@ -17,6 +17,9 @@ export class NavbarComponent {
   navigateToLogin(): void {
     this.router.navigate(['/account/login']);
   }
+  navigateToRegister(): void {
+    this.router.navigate(['/account/register']);
+  }
 
   get isDarkMode(): boolean {
     return this.themeService.isDarkMode();
