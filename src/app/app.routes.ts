@@ -4,7 +4,7 @@ import { HomeComponent } from './core/pages/home/home.component';
 import { PricingComponent } from './core/pages/pricing/pricing.component';
 
 export const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'pricing', loadComponent: () => import('./core/pages/pricing/pricing.component').then(m => m.PricingComponent) },
   {

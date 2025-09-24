@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent {
+  
   mobileMenuOpen = false;
   constructor(public themeService: ThemeService, private router: Router) {}
     closeMenu(): void {
@@ -19,6 +20,10 @@ export class NavbarComponent {
         this.mobileMenuOpen = false;
       }
     }
+    navigateToHome(): void {
+    this.router.navigate(['/home']);
+    this.closeMenu();
+  }
   navigateToLogin(): void {
     this.router.navigate(['/account/login']);
     this.closeMenu();
