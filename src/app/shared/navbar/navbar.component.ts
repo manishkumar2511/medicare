@@ -34,6 +34,7 @@ export class NavbarComponent {
 
   toggleTheme(): void {
     this.themeService.toggleTheme();
+    this.closeMenu();
   }
 
   toggleMobileMenu(): void {
