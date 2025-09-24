@@ -28,6 +28,11 @@ export class NavbarComponent {
     this.closeMenu();
   }
 
+  navigateToPricing(): void {
+    this.router.navigate(['/pricing']);
+    this.closeMenu();
+  }
+
   get isDarkMode(): boolean {
     return this.themeService.isDarkMode();
   }
