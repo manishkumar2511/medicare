@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
@@ -21,7 +22,11 @@ import { FooterComponent } from '../../../shared/footer/footer.component';
 export class HomeComponent {
   mobileMenuOpen = false;
 
-  constructor(public themeService: ThemeService) {}
+  constructor(public themeService: ThemeService, private router: Router) {}
+
+  selectPlan(plan: any) {
+    this.router.navigate(['/payment-management/payment-billing'], { queryParams: { plan: plan.name }, state: { plan } });
+  }
 
   menuItems: MenuItem[] = [
     {

@@ -1,37 +1,15 @@
 <div class="pricing-wrapper">
   <h2 class="pricing-title">Our Plans</h2>
   <div class="pricing-cards">
-    <div class="pricing-card basic">
-      <h3>Basic</h3>
-      <div class="price">₹499<span>/mo</span></div>
+    <div *ngFor="let plan of plans" class="pricing-card">
+      <h3>{{ plan.name }}</h3>
+      <div class="price">{{ plan.price }}<span>{{ plan.period }}</span></div>
       <ul>
-        <li>Up to 100 Products</li>
-        <li>Email Support</li>
-        <li>Basic Analytics</li>
+        <li *ngFor="let feature of plan.features">{{ feature }}</li>
       </ul>
-      <button class="pricing-btn">Choose Basic</button>
-    </div>
-    <div class="pricing-card pro">
-      <h3>Pro</h3>
-      <div class="price">₹999<span>/mo</span></div>
-      <ul>
-        <li>Up to 1000 Products</li>
-        <li>Priority Email & Chat Support</li>
-        <li>Advanced Analytics</li>
-        <li>Custom Reports</li>
-      </ul>
-      <button class="pricing-btn">Choose Pro</button>
-    </div>
-    <div class="pricing-card enterprise">
-      <h3>Enterprise</h3>
-      <div class="price">Contact Us</div>
-      <ul>
-        <li>Unlimited Products</li>
-        <li>Dedicated Account Manager</li>
-        <li>Custom Integrations</li>
-        <li>24/7 Support</li>
-      </ul>
-      <button class="pricing-btn">Contact Sales</button>
+      <button class="pricing-btn" (click)="selectPlan(plan)">
+        {{ plan.name === 'Enterprise' ? 'Contact Sales' : 'Choose ' + plan.name }}
+      </button>
     </div>
   </div>
 </div>

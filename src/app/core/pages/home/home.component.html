@@ -79,9 +79,9 @@
           <p-button 
             [label]="plan.popular ? 'Get Started' : 'Choose Plan'" 
             class="navbar-bg-btn plan-button"
-            [style]="{'width': '100%'}">
+            [style]="{'width': '100%'}"
+            (onClick)="selectPlan(plan)">
           </p-button>
-
         </ng-template>
       </p-card>
     </div>

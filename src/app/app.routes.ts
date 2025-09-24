@@ -8,6 +8,10 @@ export const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'pricing', loadComponent: () => import('./core/pages/pricing/pricing.component').then(m => m.PricingComponent) },
   {
+    path: 'payment-management',
+    loadChildren: () => import('./core/payment-management/payment-management.module').then(m => m.PaymentManagementModule)
+  },
+  {
     path: 'account',
     loadChildren: () => import('./core/account/account.module').then(m => m.AccountModule)
   },
