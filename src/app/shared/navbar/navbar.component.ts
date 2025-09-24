@@ -14,11 +14,18 @@ import { Router } from '@angular/router';
 export class NavbarComponent {
   mobileMenuOpen = false;
   constructor(public themeService: ThemeService, private router: Router) {}
+    closeMenu(): void {
+      if (this.mobileMenuOpen) {
+        this.mobileMenuOpen = false;
+      }
+    }
   navigateToLogin(): void {
     this.router.navigate(['/account/login']);
+    this.closeMenu();
   }
   navigateToRegister(): void {
     this.router.navigate(['/account/register']);
+    this.closeMenu();
   }
 
   get isDarkMode(): boolean {
