@@ -19,7 +19,7 @@
   --secondary-color: #F5F5F5;
   --accent-color: #FFD54F;
   --error-color: #D32F2F;
-  --success-color: #388E3C;
+  --success-color: #1ec026;
   --info-color: #1976D2;
   
   // Light Theme Text Colors
@@ -47,14 +47,14 @@
 
 /* Dark Theme Variables */
 [data-theme="dark"] {
-  --primary-color: #4CAF50;
-  --primary-hover: #45A049;
-  --primary-active: #3D8B40;
-  --primary-disabled: #81C784;
+  --primary-color: #47aa89;
+  --primary-hover: #47aa89;
+  --primary-active: #47aa89;
+  --primary-disabled: #47aa89;
   --secondary-color: #2D2D2D;
   --accent-color: #FFC107;
   --error-color: #F44336;
-  --success-color: #4CAF50;
+  --success-color: #47aa89;
   --info-color: #2196F3;
   
   // Dark Theme Text Colors
