@@ -1,5 +1,5 @@
 <div class="register-wrapper">
-  <form class="register-form">
+  <form class="register-form" (ngSubmit)="register()">
     <h2 class="register-title">Register Your Store Here !</h2>
     <div class="register-columns">
       <div class="register-col">
@@ -31,7 +31,8 @@
           <h3>Contact Details</h3>
           <div class="form-group"><label>Primary Contact Number</label><input type="text" class="form-control" /></div>
           <div class="form-group"><label>Alternate Contact Number (optional)</label><input type="text" class="form-control" /></div>
-          <div class="form-group"><label>Store Email ID</label><input type="email" class="form-control" /></div>
+          <div class="form-group"><label>Store Email ID</label><input type="email" class="form-control" [(ngModel)]="email" name="email" /></div>
+          <div class="form-group"><label>Password</label><input type="password" class="form-control" [(ngModel)]="password" name="password" /></div>
           <div class="form-group"><label>Website / Online Link (optional)</label><input type="url" class="form-control" /></div>
           <div class="form-group"><label>Emergency Contact Number (optional)</label><input type="text" class="form-control" /></div>
         </section>
@@ -53,6 +54,14 @@
         </section>
       </div>
     </div>
+    <div class="form-group">
+      <label>Role</label>
+      <select class="form-control" [(ngModel)]="role" name="role">
+        <option value="StoreAdmin">StoreAdmin</option>
+        <option value="StoreStaff">StoreStaff</option>
+      </select>
+    </div>
+    <div *ngIf="message" class="form-message">{{ message }}</div>
     <button type="submit" class="register-btn">Register Store</button>
   </form>
 </div>
