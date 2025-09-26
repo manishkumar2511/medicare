@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ButtonModule } from 'primeng/button';
 import { ThemeService } from '../../core/services/theme.service';
+import { AuthService } from '../../core/services/auth.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -14,7 +15,8 @@ import { Router } from '@angular/router';
 export class NavbarComponent {
   
   mobileMenuOpen = false;
-  constructor(public themeService: ThemeService, private router: Router) {}
+  userMenuOpen = false;
+  constructor(public themeService: ThemeService, private router: Router, public auth: AuthService) {}
     closeMenu(): void {
       if (this.mobileMenuOpen) {
         this.mobileMenuOpen = false;
@@ -49,5 +51,25 @@ export class NavbarComponent {
 
   toggleMobileMenu(): void {
     this.mobileMenuOpen = !this.mobileMenuOpen;
+  }
+
+  toggleUserMenu(): void {
+    this.userMenuOpen = !this.userMenuOpen;
+  }
+
+  get currentUser() {
+    // return reactive current user from the auth signal so template updates
+    return this.auth.currentUser();
+  }
+
+  isSuperAdmin(): boolean {
+    const cu = this.auth.currentUser();
+    return !!(cu && cu.role === 'SuperAdmin');
+  }
+
+  logout(): void {
+    this.auth.logout();
+    this.closeMenu();
+    this.userMenuOpen = false;
   }
 }

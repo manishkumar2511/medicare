@@ -9,6 +9,7 @@ export class ThemeService {
   private readonly DARK_THEME = 'dark';
   private readonly LIGHT_THEME = 'light';
   private platformId = inject(PLATFORM_ID);
+  private readonly isBrowser = typeof window !== 'undefined' && typeof window.localStorage !== 'undefined';
 
   // Signal for reactive theme state
   public isDarkMode = signal<boolean>(this.getInitialTheme());
@@ -23,10 +24,14 @@ export class ThemeService {
     if (!isPlatformBrowser(this.platformId)) {
       return false; // Default to light theme on server
     }
-
-    const savedTheme = localStorage.getItem(this.THEME_KEY);
-    if (savedTheme) {
-      return savedTheme === this.DARK_THEME;
+    if (!this.isBrowser) return false;
+    try {
+      const savedTheme = window.localStorage.getItem(this.THEME_KEY);
+      if (savedTheme) {
+        return savedTheme === this.DARK_THEME;
+      }
+    } catch (e) {
+      console.warn('ThemeService: unable to read localStorage', e);
     }
     
     // Check system preference
@@ -39,7 +44,13 @@ export class ThemeService {
     this.applyTheme(newTheme);
     
     if (isPlatformBrowser(this.platformId)) {
-      localStorage.setItem(this.THEME_KEY, newTheme ? this.DARK_THEME : this.LIGHT_THEME);
+      if (this.isBrowser) {
+        try {
+          window.localStorage.setItem(this.THEME_KEY, newTheme ? this.DARK_THEME : this.LIGHT_THEME);
+        } catch (e) {
+          console.warn('ThemeService: unable to write localStorage', e);
+        }
+      }
     }
   }
 

@@ -72,6 +72,58 @@
       border-radius: 2px;
     }
   }
+  .user-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: var(--navbar-text);
+  }
+
+  .user-email {
+    font-size: 0.9rem;
+    color: var(--navbar-text);
+    max-width: 160px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .avatar-wrapper {
+    position: relative;
+    display: inline-block;
+  }
+
+  .avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--avatar-bg, #fff);
+    color: var(--avatar-text, #2E7D5F);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+  }
+
+  .status-dot {
+    position: absolute;
+    right: -2px;
+    bottom: -2px;
+    width: 10px;
+    height: 10px;
+    background: #2ecc71; /* green */
+    border-radius: 50%;
+    border: 2px solid var(--navbar-bg, var(--primary-color));
+  }
+
+  .logout-btn {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.15);
+    color: var(--navbar-text);
+    padding: 6px 8px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
 
   @media (max-width: 900px) {
     .nav-container {

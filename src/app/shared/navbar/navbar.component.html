@@ -12,14 +12,33 @@
       </div>
     </div>
     <div class="nav-menu" [class.active]="mobileMenuOpen">
-  <a class="nav-link" (click)="navigateToHome()">Home</a>
-  <a routerLink="/features" class="nav-link" (click)="closeMenu()">Features</a>
-  <a class="nav-link" (click)="navigateToPricing()">Pricing</a>
-  <a routerLink="/about" class="nav-link" (click)="closeMenu()">About</a>
-  <a routerLink="/contact" class="nav-link" (click)="closeMenu()">Contact</a>
+  <!-- Hide the main nav links when any user is logged in -->
+  <ng-container *ngIf="!auth.currentUser()">
+        <a class="nav-link" (click)="navigateToHome()">Home</a>
+        <a routerLink="/features" class="nav-link" (click)="closeMenu()">Features</a>
+        <a class="nav-link" (click)="navigateToPricing()">Pricing</a>
+        <a routerLink="/about" class="nav-link" (click)="closeMenu()">About</a>
+        <a routerLink="/contact" class="nav-link" (click)="closeMenu()">Contact</a>
+      </ng-container>
+
       <div class="nav-buttons">
-        <a class="nav-link" (click)="navigateToLogin()">Login</a>
-        <a class="nav-link" (click)="navigateToRegister()">Get Started</a>
+  <ng-container *ngIf="!auth.currentUser(); else loggedIn">
+          <a class="nav-link" (click)="navigateToLogin()">Login</a>
+          <a class="nav-link" (click)="navigateToRegister()">Get Started</a>
+        </ng-container>
+        <ng-template #loggedIn>
+          <div class="user-badge" title="Logged in user">
+            <span class="user-email">{{ auth.currentUser()?.email }}</span>
+            <div class="avatar-wrapper" (click)="toggleUserMenu()" style="cursor: pointer;">
+              <div class="avatar">{{ (auth.currentUser()?.email || '') | slice:0:1 | uppercase }}</div>
+              <span class="status-dot"></span>
+            </div>
+            <div class="user-menu" *ngIf="userMenuOpen">
+              <button class="logout-btn" (click)="logout()">Logout</button>
+            </div>
+          </div>
+        </ng-template>
+
         <i class="pi" [ngClass]="isDarkMode ? 'pi-moon' : 'pi-sun'" (click)="toggleTheme()"
           style="font-size: 1.5rem; cursor: pointer; margin-left: 1rem; color: var(--text-primary);"></i>
       </div>
