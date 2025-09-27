@@ -21,6 +21,22 @@
         <a routerLink="/contact" class="nav-link" (click)="closeMenu()">Contact</a>
       </ng-container>
 
+      <!-- Shown when logged in -->
+      <ng-container *ngIf="currentUser">
+        <!-- If role is SuperAdmin -->
+        <ng-container *ngIf="isSuperAdmin(); else normalRole">
+          <a routerLink="/dashboard" class="nav-link" (click)="closeMenu()">Dashboard</a>
+          <a routerLink="/stores" class="nav-link" (click)="closeMenu()">Stores</a>
+        </ng-container>
+      
+        <!-- Other roles -->
+        <ng-template #normalRole>
+          <a routerLink="/dashboard" class="nav-link" (click)="closeMenu()">Dashboard</a>
+          <a routerLink="/transactions" class="nav-link" (click)="closeMenu()">Transactions</a>
+          <a routerLink="/sales" class="nav-link" (click)="closeMenu()">Sales</a>
+        </ng-template>
+      </ng-container>
+
       <div class="nav-buttons">
   <ng-container *ngIf="!auth.currentUser(); else loggedIn">
           <a class="nav-link" (click)="navigateToLogin()">Login</a>
