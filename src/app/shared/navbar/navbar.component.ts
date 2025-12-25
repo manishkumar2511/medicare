@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
 import { ThemeService } from '../../core/services/theme.service';
 import { AuthService } from '../../core/services/auth.service';
@@ -8,7 +9,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [CommonModule, ButtonModule],
+  imports: [CommonModule, RouterModule, ButtonModule],
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss']
 })
@@ -35,10 +36,7 @@ export class NavbarComponent {
     this.closeMenu();
   }
 
-  navigateToPricing(): void {
-    this.router.navigate(['/pricing']);
-    this.closeMenu();
-  }
+
 
   get isDarkMode(): boolean {
     return this.themeService.isDarkMode();

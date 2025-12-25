@@ -8,16 +8,16 @@ import { CardModule } from 'primeng/card';
 import { MenubarModule } from 'primeng/menubar';
 import { ToggleButtonModule } from 'primeng/togglebutton';
 import { MenuItem } from 'primeng/api';
-import { ThemeService } from '../../services/theme.service';
-import { SharedModule } from '../../../shared/shared.module';
-import { FooterComponent } from '../../../shared/footer/footer.component';
+import { ThemeService } from '../services/theme.service';
+import { SharedModule } from '../../shared/shared.module';
+import { FooterComponent } from '../../shared/footer/footer.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
   imports: [CommonModule, FormsModule, RouterModule, ButtonModule, CardModule, MenubarModule, ToggleButtonModule, SharedModule],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+  styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
   mobileMenuOpen = false;

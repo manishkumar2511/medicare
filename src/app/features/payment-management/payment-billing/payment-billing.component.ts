@@ -22,14 +22,12 @@ export class PaymentBillingComponent {
   selectedMethod = this.paymentMethods[0];
 
   constructor(private router: Router, private route: ActivatedRoute) {
-    // If plan is not passed as input, try to get it from router state
     const nav = this.router.getCurrentNavigation();
     if (!this.plan && nav?.extras.state?.['plan']) {
       this.plan = nav.extras.state['plan'];
       return;
     }
 
-    // Fallback: check query params and map to a known plan
     const planName = this.route.snapshot.queryParamMap.get('plan');
     if (planName) {
       const map: any = {
@@ -46,7 +44,6 @@ export class PaymentBillingComponent {
   }
 
   payNow() {
-    // Payment logic here
     alert('Payment processed!');
   }
 }

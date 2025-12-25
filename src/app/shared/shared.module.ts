@@ -1,7 +1,7 @@
 
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PrimematerialModule } from '../primematerial.module';
+import { PrimematerialModule } from '../core/primematerial.module';
 @NgModule({
   declarations: [],
   imports: [

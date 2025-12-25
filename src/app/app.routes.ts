@@ -1,19 +1,11 @@
-import { Routes } from '@angular/router';
-import { HomeComponent } from './core/pages/home/home.component';
-
-import { PricingComponent } from './core/pages/pricing/pricing.component';
+import { Routes } from "@angular/router";
+import { authRoutes } from "./features/auth/routes";
 
 export const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent },
-  { path: 'pricing', loadComponent: () => import('./core/pages/pricing/pricing.component').then(m => m.PricingComponent) },
-  {
-    path: 'payment-management',
-    loadChildren: () => import('./core/payment-management/payment-management.module').then(m => m.PaymentManagementModule)
-  },
-  {
-    path: 'account',
-    loadChildren: () => import('./core/account/account.module').then(m => m.AccountModule)
-  },
-  { path: '**', redirectTo: '' }
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'account', children: authRoutes },
+  { path: 'pricing', loadComponent: () => import('./features/pricing').then(m => m.PricingComponent) },
+  { path: 'payment-management', loadChildren: () => import('./features/payment-management').then(m => m.PaymentManagementModule) },
+  { path: 'home', loadComponent: () => import('./core/home').then(m => m.HomeComponent) },
+  { path: "**", redirectTo: "/home" },
 ];

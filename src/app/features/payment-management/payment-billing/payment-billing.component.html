@@ -1,0 +1,11 @@
+<div class="payment-billing">
+  <h2>Payment for {{ plan?.name || 'Selected Plan' }}</h2>
+  <div class="methods">
+    <button *ngFor="let m of paymentMethods" (click)="selectMethod(m)" class="method-btn">{{ m.name }}</button>
+  </div>
+
+  <div class="summary">
+    <p *ngIf="plan">Price: {{ plan.price }} {{ plan.period }}</p>
+    <button (click)="payNow()" class="pay-btn">Pay Now</button>
+  </div>
+</div>

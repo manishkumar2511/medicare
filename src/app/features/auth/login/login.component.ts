@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthService } from '../../services/auth.service';
+import { AuthService } from '../../../core/services';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +16,7 @@ export class LoginComponent {
   password = '';
   message = '';
 
-  constructor(private auth: AuthService, private router: Router) {}
+  constructor(private auth:AuthService, private router: Router) {}
 
   submit(): void {
     this.message = '';

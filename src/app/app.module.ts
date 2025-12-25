@@ -7,9 +7,7 @@ import { routes } from './app.routes';
 
 
 @NgModule({
-  declarations: [
-    AppComponent,
-  ],
+  declarations: [],
   imports: [
     BrowserModule,
     CoreModule,

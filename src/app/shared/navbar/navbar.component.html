@@ -15,8 +15,7 @@
   <!-- Hide the main nav links when any user is logged in -->
   <ng-container *ngIf="!auth.currentUser()">
         <a class="nav-link" (click)="navigateToHome()">Home</a>
-        <a routerLink="/features" class="nav-link" (click)="closeMenu()">Features</a>
-        <a class="nav-link" (click)="navigateToPricing()">Pricing</a>
+        <a routerLink="/pricing" class="nav-link" (click)="closeMenu()">Pricing</a>
         <a routerLink="/about" class="nav-link" (click)="closeMenu()">About</a>
         <a routerLink="/contact" class="nav-link" (click)="closeMenu()">Contact</a>
       </ng-container>
