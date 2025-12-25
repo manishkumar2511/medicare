@@ -12,10 +12,10 @@
 /* MedicalCare Theme Variables */
 :root {
   // Light Theme Colors
-  --primary-color: #2E7D5F;
-  --primary-hover: #25694E;
-  --primary-active: #1B4E38;
-  --primary-disabled: #A5D6A7;
+  --primary-color: #19B6E6; /* brand cyan/blue */
+  --primary-hover: #1596C9;
+  --primary-active: #0f7ca0;
+  --primary-disabled: #BEEAF6;
   --secondary-color: #F5F5F5;
   --accent-color: #FFD54F;
   --error-color: #D32F2F;
@@ -47,10 +47,10 @@
 
 /* Dark Theme Variables */
 [data-theme="dark"] {
-  --primary-color: #47aa89;
-  --primary-hover: #47aa89;
-  --primary-active: #47aa89;
-  --primary-disabled: #47aa89;
+  --primary-color: #0f7ca0;
+  --primary-hover: #0f6f93;
+  --primary-active: #095970;
+  --primary-disabled: #0f7ca0;
   --secondary-color: #2D2D2D;
   --accent-color: #FFC107;
   --error-color: #F44336;
