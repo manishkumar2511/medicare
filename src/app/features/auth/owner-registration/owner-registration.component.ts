@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { PrimematerialModule } from '../../../core/primematerial.module';
-import { FormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
+import { CommonService } from '../../../core/services/common';
+import { State } from '../../../core/models/common/state.model';
 
 @Component({
   selector: 'app-owner-registration',
@@ -11,7 +11,24 @@ import { CommonModule } from '@angular/common';
   templateUrl: './owner-registration.component.html',
   styleUrl: './owner-registration.component.scss'
 })
-export class OwnerRegistrationComponent {
+export class OwnerRegistrationComponent implements OnInit {
+  private commonService = inject(CommonService);
+  states: State[] = [];
+
+  ngOnInit(): void {
+    this.getState();
+    console.log('Owner Registration Component Initialized');
+    console.log(this.states);
+  }
+
+  getState() {
+    debugger;
+    this.commonService.getState().subscribe({
+      next: (res: State[]) => {
+        this.states = [...res];
+      },
+    });
+  }
   model = {
     firstName: '',
     lastName: '',
@@ -24,12 +41,6 @@ export class OwnerRegistrationComponent {
     postalCode: '',
     stateId: ''
   };
-
-  states = [
-    { id: '1', name: 'Maharashtra' },
-    { id: '2', name: 'Gujarat' },
-    { id: '3', name: 'Delhi' }
-  ];
 
   register() {
     console.log(this.model);
