@@ -101,7 +101,7 @@
       <div class="nav-buttons">
   <ng-container *ngIf="!auth.currentUser(); else loggedIn">
           <a class="nav-link" (click)="navigateToLogin()">Login</a>
-          <a class="nav-link" (click)="navigateToRegister()">Get Started</a>
+          <a class="nav-link" (click)="navigateToOwnerRegistration()">Get Started</a>
         </ng-container>
         <ng-template #loggedIn>
           <div class="user-badge" title="Logged in user">

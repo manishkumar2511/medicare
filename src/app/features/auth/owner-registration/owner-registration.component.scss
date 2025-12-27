@@ -1,0 +1,174 @@
+/* WRAPPER */
+.register-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    135deg,
+    var(--background-light, #FAFAFA) 0%,
+    #E8F5E8 100%
+  );
+  padding: 2vw 0;
+}
+
+/* FORM */
+.register-form {
+  width: 100%;
+  max-width: 900px;
+  background: var(--background-primary, #fff);
+  box-shadow: 0 4px 24px rgba(46, 125, 95, 0.12);
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* TITLE */
+.register-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary-color, #2E7D5F);
+  text-align: center;
+}
+
+/* COLUMNS */
+.register-columns {
+  display: flex;
+  gap: 2rem;
+}
+
+.register-col {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* SECTIONS */
+.register-section h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--primary-color, #2E7D5F);
+  margin-bottom: 1rem;
+}
+
+/* FORM GROUP */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  font-weight: 500;
+  margin-bottom: 0.3rem;
+  color: var(--primary-color, #2E7D5F);
+}
+
+/* PRIME + INPUT LOOK MATCH */
+.form-control,
+:host ::ng-deep .p-inputtext,
+:host ::ng-deep .p-password input,
+:host ::ng-deep .p-dropdown {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-color, #E0E0E0);
+  background: var(--background-light, #FAFAFA);
+  color: var(--text-primary, #212121);
+}
+
+/* BUTTON */
+.register-btn {
+  width: 100%;
+  padding: 1rem 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  background: var(--primary-color, #2E7D5F);
+  color: #fff;
+  border: none;
+  margin-top: 1.5rem;
+  cursor: pointer;
+}
+
+.register-btn:hover {
+  background: var(--primary-hover, #25694E);
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+  .register-form {
+    max-width: 98vw;
+    padding: 1rem 0.5rem;
+  }
+
+  .register-columns {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .register-title {
+    font-size: 1.3rem;
+  }
+}
+
+/* SMALL MOBILE */
+@media (max-width: 600px) {
+  .register-form {
+    max-width: 97vw;
+    padding: 0.5rem;
+  }
+
+  .register-title {
+    font-size: 1.1rem;
+  }
+
+  .form-control {
+    font-size: 0.95rem;
+  }
+}
+
+/* LARGE SCREENS */
+@media (min-width: 1600px) {
+  .register-form {
+    max-width: 800px;
+    padding: 3rem 2rem;
+  }
+
+  .register-title {
+    font-size: 2.5rem;
+  }
+
+  .form-control {
+    font-size: 1.2rem;
+    padding: 1rem 1.5rem;
+  }
+}
+
+/* 4K */
+@media (min-width: 2000px) {
+  .register-form {
+    max-width: 1200px;
+  }
+
+  .register-title {
+    font-size: 3rem;
+  }
+}
+
+:host ::ng-deep .p-password {
+  width: 100%;
+}
+
+:host ::ng-deep .p-password .p-inputtext {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-color, #E0E0E0);
+  background: var(--background-light, #FAFAFA);
+}

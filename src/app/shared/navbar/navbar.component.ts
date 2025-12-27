@@ -31,8 +31,8 @@ export class NavbarComponent {
     this.router.navigate(['/account/login']);
     this.closeMenu();
   }
-  navigateToRegister(): void {
-    this.router.navigate(['/account/register']);
+  navigateToOwnerRegistration(): void {
+    this.router.navigate(['/account/owner-registration']);
     this.closeMenu();
   }
 

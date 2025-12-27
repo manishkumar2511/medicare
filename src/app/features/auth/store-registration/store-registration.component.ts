@@ -9,10 +9,10 @@ import { AppUser, AuthService, UserRole } from '../../../core/services';
   selector: 'app-register',
   standalone: true,
   imports: [CommonModule, FormsModule],
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.scss']
+  templateUrl: './store-registration.component.html',
+  styleUrls: ['./store-registration.component.scss']
 })
-export class RegisterComponent {
+export class StoreRegistrationComponent {
   email = '';
   password = '';
   role: UserRole = 'StoreAdmin';
